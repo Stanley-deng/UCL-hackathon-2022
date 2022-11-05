@@ -12,7 +12,34 @@ async function create(req, res) {
     userRepository.create(newUser);
 }
 
+async function findByName(req, res) {
+    try {
+        const { name } = req.query;
+        const users = await userRepository.findByName(name);
+        res.status(200).send(users);
+    } catch (error) {
+        console.log("error on findByName userController:", error);
+        res.status(500).send({
+            message: error,
+        })
+    }
+}
+
+async function updateNote(req, res) {
+    try {
+        const note = req.body.note;
+        const result = await userRepository.updateNote(note, req.email);
+        res.status(200).send(result);
+    } catch (error) {
+        console.log("error on findByName userController:", error);
+        res.status(500).send({
+            message: error,
+        })
+    }
+}
 
 module.exports = {
-    create
+    create,
+    findByName,
+    updateNote
 }

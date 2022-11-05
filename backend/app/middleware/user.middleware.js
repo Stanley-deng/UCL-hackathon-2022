@@ -37,7 +37,8 @@ async function verifyToken(req, res, next) {
             });
         }
 
-        req.fullName = response.data.full_name
+        req.fullName = NAME;
+        req.email = EMAIL;
         next();
     } catch (error) {
         console.log("Error in middleware()", error);
