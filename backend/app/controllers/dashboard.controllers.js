@@ -19,8 +19,7 @@ async function getAll(req, res) {
 
 
         const response_timetable = await axios.get(`${UCL_URL_TIMETABLE}?client_secret=${process.env.CLIENT_SECRET}&date=${CURRENT_DATE}&token=${TOKEN}`);
-        //const response_staff = await axios.get(`${UCL_URL_STAFF}?query=${dummySearchValue}&token=uclapi-ac1ee6391b978d0-3dfe906ffe013a6-21e74ed8bfcb814-c5dae80478c1e5a`);
-        //https://uclapi.com/search/people?query=jen&token=uclapi-ac1ee6391b978d0-3dfe906ffe013a6-21e74ed8bfcb814-c5dae80478c1e5a
+        const response_staff = await axios.get(`${UCL_URL_STAFF}?query=${dummySearchValue}&client_secret=${process.env.CLIENT_SECRET}&token=${TOKEN}`);
 
         const timetable = response_timetable.data.timetable;
         //const staff = response_staff.data.staff;
