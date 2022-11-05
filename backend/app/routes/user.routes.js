@@ -1,24 +1,14 @@
-module.exports = app => {
-    const users = require("../controllers/user.controllers.js");
-    const userMiddleware = require("../middleware/user.middleware");
+module.exports = (app) => {
+  const users = require("../controllers/user.controllers.js");
+  const userMiddleware = require("../middleware/user.middleware");
 
-    var router = require("express").Router();
+  var router = require("express").Router();
 
-    router.get(
-        "/",
-        [
-            userMiddleware.verifyToken
-        ],
-        users.findByName
-    );
+  router.get("/", [userMiddleware.verifyToken], users.findByName);
 
-    router.put(
-        "/note",
-        [
-            userMiddleware.verifyToken
-        ],
-        users.updateNote
-    );
+  router.put("/note", [userMiddleware.verifyToken], users.updateNote);
 
-    app.use('/api/user', router);
+  router.post("/events", [userMiddleware.verifyToken], users.updateEvents);
+
+  app.use("/api/user", router);
 };
