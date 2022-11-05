@@ -37,7 +37,7 @@ export default {
 
 <style scoped>
   .calendar-item-cont{
-    width: 279px;
+    width: 250px;
     height: 100%;
     /*background-color: #AC145A;*/
     border: 1px solid var(--secondary);
