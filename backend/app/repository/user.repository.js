@@ -11,7 +11,13 @@ async function updateDegree(filter, detail) {
     return response;
 };
 
+async function findOne(email) {
+    const response = await User.findOne({ email: email });
+    return response;
+}
+
 module.exports = {
     create,
     updateDegree,
+    findOne,
 }

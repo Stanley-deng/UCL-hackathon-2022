@@ -6,8 +6,7 @@ module.exports = mongoose => {
                 name: String,
                 email: String,
                 department: String,
-                degree: String,
-                note: Array,
+                note: String,
             },
         )
     );
