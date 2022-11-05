@@ -16,11 +16,9 @@ async function verifyToken(req, res, next) {
         });
     }
 
-    const response = await axios.get(`${UCL_URL}?client_secret=${process.env.CLIENT_SECRET}&token=${UCL_URL}`);
-    console.log(response);
-
-    res.send(response);
-
+    const response = await axios.get(`${UCL_URL}?client_secret=${process.env.CLIENT_SECRET}&token=${TOKEN}`);
+    console.log(response.status);
+    console.log(response.data);
     return;
 }
 
