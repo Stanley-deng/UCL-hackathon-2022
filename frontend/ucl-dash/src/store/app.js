@@ -26,38 +26,14 @@ const getters = {
     studentName: (state) => {
         return state.items.student;
     },
-    cartValueWithoutVat: (state) => {
-        let res = 0;
-        state.items.map(item => {
-            res += (item.price - item.discount) * item.quantity;
-        });
-        return roundToTwoDecimalPlaces(res);
-    },
-    vatValue: (state) => {
-        let res = 0;
-        state.items.map(item => {
-            res += (item.price - item.discount) * item.quantity;
-        });
-
-        const vatResult = res * (Number(process.env.VUE_APP_THAI_VAT) / 100);
-        return roundToTwoDecimalPlaces(vatResult);
-    },
-    cartValueWithVat: (state) => {
-        let res = 0;
-        state.items.map(item => {
-            res += (item.price - item.discount) * item.quantity;
-        });
-
-        const resWithVat = res * ((Number(process.env.VUE_APP_THAI_VAT) / 100) + 1);
-        return roundToTwoDecimalPlaces(resWithVat);
-    },
-    cartNumItems: (state) => {
-        let res = 0;
-        state.items.map(item => {
-            res +=  item.quantity;
-        });
-        return res;
-    },
+    studentTimetable: (state) => {
+        const timetable = state.item.timetable;
+        if (timetable === undefined) {
+            return null;
+        } else {
+            return timetable
+        }
+    }
 }
 
 export default {
