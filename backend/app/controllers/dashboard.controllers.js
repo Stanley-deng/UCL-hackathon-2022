@@ -24,7 +24,7 @@ async function getAll(req, res) {
         const timetable = response_timetable.data.timetable;
         //const staff = response_staff.data.staff;
 
-        console.log(response_staff);
+        //console.log(response_staff);
 
         res.status(200).send({
             student: {

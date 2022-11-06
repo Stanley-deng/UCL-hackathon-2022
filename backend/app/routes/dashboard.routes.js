@@ -4,7 +4,7 @@ module.exports = app => {
 
     var router = require("express").Router();
 
-    router.get(
+    router.post(
         "/",
         [
             userMiddleware.verifyToken

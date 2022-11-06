@@ -4,9 +4,9 @@ module.exports = (app) => {
 
   var router = require("express").Router();
 
-  router.get("/", [userMiddleware.verifyToken], users.findByName);
+  router.post("/", [userMiddleware.verifyToken], users.findByName);
 
-  router.put("/note", [userMiddleware.verifyToken], users.updateNote);
+  router.post("/note", [userMiddleware.verifyToken], users.updateNote);
 
   router.post("/events", [userMiddleware.verifyToken], users.updateEvents);
 

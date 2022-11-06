@@ -5,11 +5,13 @@ const fetch = require("node-fetch");
 
 const app = express();
 
-var corsOptions = {
-  origin: "http://localhost:8080",
-};
+// var corsOptions = {
+//   origin: "http://localhost:5173",
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+
+app.use(cors({require: true}))
 
 // parse requests of content-type - application/json
 app.use(express.json());
