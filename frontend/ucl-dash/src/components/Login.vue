@@ -8,15 +8,15 @@ import LoginHeader from '../components/LoginHeader.vue';
       <LoginHeader />
     </div>
     <div class="login-button-area">
-      <button type="submit">
+      <a href="https://uclapi.com/oauth/authorise?client_id=1669290082760730.2277398299135449&state=IBHyZJcTW1MERJsVT7Y5CfTnwvjA204h">
+        <button type="submit">
         Login Via UCL
       </button>
+      </a>    
     </div>
   </div>
 
 </template>
-
-
 
 <style scoped>
 .login-cont{
