@@ -26,7 +26,7 @@ export default {
     display: flex;
     margin: 0 20px;
     float: left;
-    min-width: 200px;
+    min-width: 800px;
     height: 248px;
     background-color: white;
     border: 1px solid var(--secondary);

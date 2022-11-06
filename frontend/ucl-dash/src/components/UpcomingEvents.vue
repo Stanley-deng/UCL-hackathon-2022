@@ -100,6 +100,8 @@ export default {
     width: 883px;
     background-color: white;
     margin-top: 30px;
+    border: 1px solid var(--secondary);
+    border-radius: 8px;
   }
   .events-head{
     margin: 20px;

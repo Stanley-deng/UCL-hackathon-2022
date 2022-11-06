@@ -33,7 +33,7 @@ export default {
     font-weight: bold;
   }
   .center{
-    margin: 15px 0;
+    margin-bottom: 25px;
     width: 100%;
     display: flex;
     align-items: center;
