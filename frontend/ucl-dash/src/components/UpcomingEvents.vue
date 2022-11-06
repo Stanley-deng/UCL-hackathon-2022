@@ -120,7 +120,7 @@ export default {
     background: #F8F8F8;
   }
   .single-event{
-    padding: 20px 30px;
+    padding: 20px 30px 20px 20px;
     color: var(--primary);
     text-align: left;
     font: normal normal normal 26px/35px Segoe UI;
@@ -135,7 +135,7 @@ export default {
   }
 
   .single-event svg{
-    margin-left: 20px;
+    /*margin-left: 0px;*/
     margin-right: 5px;
   }
   .single-event-date{
