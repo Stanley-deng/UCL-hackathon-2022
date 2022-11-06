@@ -4,6 +4,7 @@ import Alert from "../components/Alert.vue";
 import Profile from "../components/Profile.vue";
 import Timetable from "../components/Timetable/Timetable.vue";
 import UpcomingEvents from "./UpcomingEvents.vue";
+
 </script>
 <template>
   <div>

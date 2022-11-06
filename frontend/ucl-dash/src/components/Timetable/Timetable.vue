@@ -12,8 +12,6 @@ import TimetableEvent from "./TimetableEvent.vue";
   </div>
 </template>
 
-
-
 <style scoped>
   .timetable-cont {
     display: flex;

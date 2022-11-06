@@ -13,9 +13,9 @@ async function getAll(req, res) {
         const TOKEN = req.body.token;
 
         /* Getting timetable */
-        let CURRENT_DATE = new Date()
-        CURRENT_DATE.toISOString().split('T')[0]
-        // let CURRENT_DATE = "2022-11-03"
+        // let CURRENT_DATE = new Date()
+        //CURRENT_DATE.toISOString().split('T')[0]
+        let CURRENT_DATE = "2022-11-03"
 
 
         const response_timetable = await axios.get(`${UCL_URL_TIMETABLE}?client_secret=${process.env.CLIENT_SECRET}&date=${CURRENT_DATE}&token=${TOKEN}`);
@@ -31,7 +31,7 @@ async function getAll(req, res) {
                 name: req.fullName,
                 degree: "MSc Software Systems Engineering",
             },
-            timetable: timetable,
+            timetable: timetable[CURRENT_DATE],
             //staff: staff
         });
     } catch (error) {
