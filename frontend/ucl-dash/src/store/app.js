@@ -33,7 +33,11 @@ const getters = {
         } else {
             return timetable
         }
+    },
+    studentNote: (state) => {
+        return state.items.student;
     }
+
 }
 
 export default {
