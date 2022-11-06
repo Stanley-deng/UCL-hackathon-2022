@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="username">
-      John Doe
+      {{ fullname }}
     </div>
     <div class="course">
       MSc. Software Systems Engineering
@@ -15,8 +15,23 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  name: "Profile.vue"
+  name: "Profile.vue",
+  data() {
+    return {
+      fullname: "John Doe"
+    }
+  },
+  methods: {
+    async getUserDetail() {
+      const result = await axios.get("localhost:9090/user");
+      if (result.status === 200) {
+
+      }
+    }
+  },
 }
 </script>
 
