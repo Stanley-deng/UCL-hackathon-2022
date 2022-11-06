@@ -23,7 +23,7 @@ const actions = {
 };
 
 const getters = {
-    studentDetail: (state) => {
+    studentName: (state) => {
         return state.items.student;
     },
     cartValueWithoutVat: (state) => {

@@ -6,13 +6,30 @@
       </div>
     </div>
     <div class="username">
-      john doe
+      {{ studentName }}
     </div>
     <div class="course">
       MSc. Software Systems Engineering
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "ProfileComponent",
+  computed: {
+    studentName() {
+      const detail = this.$store.getters['app/studentName']
+      if (detail === undefined) {
+        return "John Doe"
+      } else {
+        return detail["name"]
+      }
+    },
+  }
+}
+</script>
+
 
 <style scoped>
   .profile-cont{
