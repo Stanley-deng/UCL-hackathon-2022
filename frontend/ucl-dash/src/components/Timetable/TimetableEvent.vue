@@ -40,7 +40,10 @@ export default {
     width: 250px;
     height: 100%;
     /*background-color: #AC145A;*/
-    border: 1px solid var(--secondary);
+    /*border: 1px solid var(--secondary);*/
+    border-right: 1px solid var(--secondary);
+    /*border-left: 0 solid;*/
+    border-bottom: 0px solid;
   }
   .top-text{
     margin: 10px;
