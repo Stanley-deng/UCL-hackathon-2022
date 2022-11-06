@@ -27,7 +27,7 @@ const getters = {
         return state.items.student;
     },
     studentTimetable: (state) => {
-        const timetable = state.item.timetable;
+        const timetable = state.items.timetable;
         if (timetable === undefined) {
             return null;
         } else {

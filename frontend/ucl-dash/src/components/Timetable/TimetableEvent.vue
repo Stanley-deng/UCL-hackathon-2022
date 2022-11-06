@@ -2,36 +2,50 @@
   <div class="calendar-item-cont">
     <div class="top-text">
       <div class="type">
-        Seminar
+        {{detail.session_type}}
       </div>
       <div class="module-code">
-        COMP0108
+        {{detail.module.module_id}}
       </div>
     </div>
     <div class="module-name">
-      Research Methods in Software Engineering
+      {{detail.module.name}}
     </div>
     <div class="date">
-      Monday 16th Nov
+      {{getDate}}
     </div>
     <div class="date">
-      11:00 - 12:00
+      {{detail.start_time}} - {{detail.end_time}}
     </div>
     <div class="location">
       <svg xmlns="http://www.w3.org/2000/svg" width="21" height="30" viewBox="0 0 21 30">
         <path id="Icon_material-location-on" data-name="Icon material-location-on" d="M18,3A10.492,10.492,0,0,0,7.5,13.5C7.5,21.375,18,33,18,33S28.5,21.375,28.5,13.5A10.492,10.492,0,0,0,18,3Zm0,14.25a3.75,3.75,0,1,1,3.75-3.75A3.751,3.751,0,0,1,18,17.25Z" transform="translate(-7.5 -3)" fill="#c6b0bc"/>
       </svg>
-      Gower Street (66-72) 01
+      {{detail.location.name}}
     </div>
     <div class="professor">
-      PETKE, Justyna (Dr)
+      {{detail.module.lecturer.name}}
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "TimetableEvent.vue"
+  name: "TimetableEvent.vue",
+  props: {
+    detail: Object,
+  },
+  computed: {
+    getDate(){
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+
+      today = mm + '/' + dd + '/' + yyyy;
+      return today
+    }
+  }  
 }
 </script>
 
