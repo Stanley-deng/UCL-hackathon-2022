@@ -4,13 +4,21 @@ import TimetableEvent from "./TimetableEvent.vue";
 
 <template>
   <div class="timetable-cont">
-    <TimetableEvent />
-    <TimetableEvent />
-    <TimetableEvent />
-    <TimetableEvent />
-
+    <h1>{{timetable}}</h1>
   </div>
 </template>
+
+<script>
+export default {
+  name: "TimetableComponent",
+  computed: {
+    timetable() {
+      const detail = this.$store.getters['app/studentTimetable']
+      return detail;
+    },
+  }
+}
+</script>
 
 <style scoped>
   .timetable-cont {
