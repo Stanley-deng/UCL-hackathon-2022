@@ -5,7 +5,6 @@ import TimetableEvent from "./TimetableEvent.vue";
 <template>
   <div class="timetable-cont">
     <TimetableEvent v-for="detail in timetable" :detail="detail"/>
-
   </div>
 </template>
 

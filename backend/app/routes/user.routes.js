@@ -7,6 +7,8 @@ module.exports = (app) => {
   router.post("/", [userMiddleware.verifyToken], users.findByName);
 
   router.post("/note", [userMiddleware.verifyToken], users.updateNote);
+  
+  router.post("/staff", [userMiddleware.verifyToken], users.uclAPIStaffSearch);
 
   router.post("/events", [userMiddleware.verifyToken], users.updateEvents);
 
