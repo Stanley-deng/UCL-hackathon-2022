@@ -10,7 +10,8 @@
       </div>
     </div>
       <div class="user-notes">
-        <textarea><!--        Data goes here-->
+        <textarea>
+          {{note}}
         </textarea>
       </div>
     <div class="save-button">
@@ -23,7 +24,18 @@
 
 <script>
 export default {
-  name: "Notes.vue"
+  name: "Notes.vue",
+  computed: {
+    note() {
+      const detail = this.$store.getters['app/studentNote']
+      if (detail === undefined) {
+        return "Note here"
+      } else {
+        return detail;
+      }
+      
+    },
+  }
 }
 </script>
 
